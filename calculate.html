@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum Two Numbers</title>
+</head>
+<body>
+    <h2>Add Two Numbers</h2>
+    <input type="number" id="points" placeholder="Enter your points">
+    <input type="number" id="overall" placeholder="Enter your overall">
+    <button onclick="calculateaverage()">Calculate average</button>
+    <p>Your average is:<span id="average"></span></p>
+	<p>this means that:<span id="meaning"></span></p>
+	<script>
+        function calculateaverage() {
+            // Get the values from the input field
+            let points = parseFloat(document.getElementById('points').value);   
+            let overall = parseFloat(document.getElementById('overall').value);
+            
+            // Calculate the BMI
+            let average = (points/overall)*100;
+			let meaning;
+            if (average < 60) {
+                meaning = "fail";
+            } else if (average < 80) {
+            meaning = "pass";
+            } else if (average < 70) {
+            meaning = "good";
+		} else {
+		meaning = "Execllent";
+}
+            // Display the result
+            document.getElementById('average').textContent = average;
+			// Display the meaning
+            document.getElementById('meaning').textContent = meaning;
+		}
+
+    </script>
+</body>
+</html>
